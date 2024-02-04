@@ -1,0 +1,94 @@
+extends  ../_skeleton
+
+//- Includes
+
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Buttons'
+    
+block title
+  title=pageName
+
+block page
+  include ../sections/_header-default-with-top-panel-var-2
+  main
+    +breadcrumbs({
+      path: [['Pages', '#'], [pageName]],
+      bgImageClass: 'breadcrumbs-01'
+    })
+  
+    // Buttons
+    section.section.section-md.bg-white.text-center
+      .shell
+        .range.range-xs-center
+          .cell-xs-12.cell-sm-6
+            h3 Buttons
+            p.big.
+              Easily insert buttons and call-to-actions in any page,#[br]
+              use amazing custom options to spice up your pages.
+    ='\n'
+  
+    section.section.section-md.bg-white.text-center
+      .shell
+        h4 Button Sizes
+        p 4 different sizes: super, large, default, and small.
+        .group-xl.group-middle.group-center
+          .button.button-xl.button-primary: span super size
+          .button.button-lg.button-primary: span large size
+          .button.button-primary: span default size
+          .button.button-sm.button-primary: span small size
+    ='\n'
+  
+    hr
+  
+    section.section.section-md.bg-white.text-center
+      .shell
+        h4 Button Shapes
+        p 4 different shapes: default, round, square and circle.
+        .group-xl.group-middle.group-center
+          .button.button-primary default
+          .button.button-primary.button-round round
+          .button.button-primary.button-square square
+          .button.button-primary.button-circle circle
+  
+    ='\n'
+  
+    hr
+  
+    section.section.section-md.bg-white.text-center
+      .shell
+        h4 Buttons with Icons
+        p Buttons are fully integrated with 900+ icons.
+        .group-xl.group-middle.group-center
+          .button.button-icon.button-icon-left.button-primary
+            span.icon.mdi.mdi-account-outline
+            | icon left
+            
+          .button.button-icon.button-icon-right.button-primary
+            span.icon.mdi.mdi-alert-circle
+            | icon right
+  
+          .button.button-icon.button-icon-right.button-default-outline
+            span.icon.mdi.mdi-heart-outline
+            | icon right
+  
+          .button.button-icon.button-icon-left.button-default-outline
+            span.icon.mdi.mdi-alert-circle
+            | icon left
+    ='\n'
+  
+    hr
+  
+    section.section.section-md.bg-white.text-center
+      .shell
+        h4 Buttons with Shadow
+        p Enhance your buttons with a shadow effect.
+        .group-xl.group-middle.group-center
+          .button.button-circle.button-primary.button-shadow shadow
+          .button.button-circle.button-transparent.button-shadow shadow 
+    ='\n'
+  
+    // Page Footer
+    include ../sections/_footer-default
+

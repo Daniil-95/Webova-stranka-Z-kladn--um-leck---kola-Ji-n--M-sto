@@ -1,0 +1,44 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-panel
+
+block variables
+	- var activeIndex = 5
+	- var pageName = "Maintenance"
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	include ../sections/_header-default-with-top-panel-var-2
+	main
+		+breadcrumbs({
+			path: [['Pages', '#'], [pageName]],
+			bgImageClass: 'breadcrumbs-01'
+		})
+
+		section.section.section-md.bg-white.text-center
+			.shell
+				.range.range-xs-center.range-50
+					.cell-md-9
+						.subtitle We are currently working on
+						h3 This page will appear in
+
+						.countdown-wrap
+							// Countdown
+							.DateCountdown(data-type='until', data-date='2018-12-31 00:00:00', data-format='wdhms', data-circle-inner-color='#ff8820', data-circle-bg='#f7f7f7', data-circle-bg-width='0.65', data-circle-fg-width='0.025')
+
+					.cell-md-8.element-mod
+						p Stay tuned and subscribe to our newsletter
+						// RD Mailform
+						form.rd-mailform.form-inline.form-center(data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+							.form-wrap
+								input#subscribe-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+								label.form-label(for="subscribe-email") Enter your e-mail
+							button(type="submit").button.button-primary.button-square: span Subscribe
+
+
+		// Page Footer
+		include ../sections/_footer-default

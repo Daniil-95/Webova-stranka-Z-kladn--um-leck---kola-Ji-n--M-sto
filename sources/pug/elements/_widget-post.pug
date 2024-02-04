@@ -1,0 +1,28 @@
+mixin widget-post(img,url, obj, tags, text_body)
+  // Post Classic
+  article.post.post-classic.post-widget
+    // Post media
+    +jpg(img,'img-responsive')
+
+    // Post content
+    section.post-content.text-left.offset-top-25
+      h6: a(href=url).link-default=obj.title
+      ul.list-inline.list-inline-sm.offset-top-5
+        li
+          .unit.unit-horizontal.unit-spacing-xxs
+            .unit-left
+              span.text-base Date:
+            .unit-body
+              time(datetime="2016-01-01")=obj.date
+        li
+          .unit.unit-horizontal.unit-spacing-xxs
+            .unit-left
+              span.text-base Comments:
+            .unit-body
+              span=obj.comments
+        li
+          .unit.unit-horizontal.unit-spacing-xxs
+            .unit-left
+              span.text-base Posted by:
+            .unit-body
+              span=obj.author

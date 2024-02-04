@@ -1,0 +1,122 @@
+extends  ../_skeleton
+
+//- Includes
+
+
+block variables
+	- var activeIndex = 3
+	- var pageName = 'Masonry Gallery'
+
+block title
+	title=pageName
+
+block page
+	include ../sections/_header-default-with-top-panel-var-2
+	main
+		+breadcrumbs({
+			path: [['Gallery', '#'], [pageName]],
+			bgImageClass: 'breadcrumbs-01'
+		})
+
+		section.section-md.bg-white.text-center
+			.shell.isotope-wrap
+				ul.isotope-filters-responsive
+					li: p Choose your category:
+					li.block-top-level
+						// Isotope Filters
+						button.isotope-filters-toggle.button.button-sm.button-primary(data-custom-toggle='#isotope-1', data-custom-toggle-hide-on-blur='true')
+							| Filter
+							span.caret
+						#isotope-1.isotope-filters
+							ul.inline-list
+								li
+									a.active(data-isotope-filter='*', data-isotope-group='gallery', href='#') All
+								li
+									a(data-isotope-filter='Category 1', data-isotope-group='gallery', href='#') Abstract Art
+								li
+									a(data-isotope-filter='Category 2', data-isotope-group='gallery', href='#') Portraits
+								li
+									a(data-isotope-filter='Category 3', data-isotope-group='gallery', href='#') Pop Art
+
+				// Isotope Content
+				.row.isotope(data-isotope-layout='masonry', data-isotope-group='gallery', data-photo-swipe-gallery='gallery')
+					.col-xs-12.col-sm-6.col-md-3.grid-sizer
+					.col-xs-12.col-sm-6.col-md-3.isotope-item(data-filter='Category 1')
+						+thumbnail-classic({
+							img: 'masonry-gallery-1-270x375',
+							original: 'original/grid-gallery-7-1200x1200_original',
+							title: 'Image #1',
+							text: 'I offer various fine art services in different genres.'
+
+						})
+
+					.col-xs-12.col-sm-6.col-md-6.isotope-item(data-filter='Category 2')
+						+thumbnail-classic({
+							img: 'masonry-gallery-2-569x375',
+							original: 'original/grid-gallery-6-800x1200_original',
+							title: 'Image #2',
+							text: 'I offer various fine art services in different genres.'
+
+						})
+
+					.col-xs-12.col-sm-6.col-md-3.isotope-item(data-filter='Category 3')
+						+thumbnail-classic({
+							img: 'masonry-gallery-3-270x230',
+							original: 'original/grid-gallery-2-1200x1200_original',
+							title: 'Image #3',
+							text: 'I offer various fine art services in different genres.'
+
+						})
+
+					.col-xs-12.col-sm-6.col-md-3.isotope-item(data-filter='Category 1')
+						+thumbnail-classic({
+							img: 'masonry-gallery-4-270x230',
+							original: 'original/grid-gallery-9-1200x800_original',
+							title: 'Image #4',
+							text: 'I offer various fine art services in different genres.'
+
+						})
+
+					.col-xs-12.col-sm-6.isotope-item(data-filter='Category 1')
+						+thumbnail-classic({
+							img: 'masonry-gallery-5-570x264',
+							original: 'original/grid-gallery-8-1200x800_original',
+							title: 'Image #5',
+							text: 'I offer various fine art services in different genres.'
+						})
+
+					.col-xs-12.col-sm-6.col-md-3.isotope-item(data-filter='Category 2')
+						+thumbnail-classic({
+							img: 'masonry-gallery-6-270x264',
+							original: 'original/grid-gallery-3-1200x800_original',
+							title: 'Image #6',
+							text: 'I offer various fine art services in different genres.'
+						})
+
+					.col-xs-12.col-sm-6.col-md-3.isotope-item(data-filter='Category 3')
+						+thumbnail-classic({
+							img: 'masonry-gallery-7-270x444',
+							original: 'original/grid-gallery-11-1200x800_original',
+							title: 'Image #7',
+							text: 'I offer various fine art services in different genres.'
+						})
+
+					.col-xs-12.col-sm-6.isotope-item(data-filter='Category 1')
+						+thumbnail-classic({
+							img: 'masonry-gallery-8-270x264',
+							original: 'original/grid-gallery-10-1200x800_original',
+							title: 'Image #8',
+							text: 'I offer various fine art services in different genres.'
+						})
+
+					.col-xs-12.col-sm-6.col-md-3.isotope-item(data-filter='Category 3')
+						+thumbnail-classic({
+							img: 'masonry-gallery-9-570x264',
+							original: 'original/grid-gallery-5-1200x800_original',
+							title: 'Image #9',
+							text: 'I offer various fine art services in different genres.'
+						})
+
+
+		// Page Footer
+		include ../sections/_footer-default

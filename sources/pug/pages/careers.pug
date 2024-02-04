@@ -1,0 +1,109 @@
+extends  ../_skeleton
+
+block variables
+	- var activeIndex = 5
+	- var pageName = "Careers"
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	include ../sections/_header-default-with-top-panel-var-2
+	main
+		+breadcrumbs({
+			path: [['Pages', '#'], [pageName]],
+			bgImageClass: 'breadcrumbs-01'
+		})
+
+		section.section.section-md.bg-gray-light.text-center
+			.shell
+				h3 Join My Team
+				p Can't find the job you want? Send your resume to #[a(href='mailto:#').link-gray info@demolink.org], #[br] and we'll contact you when a new position opens.
+				.range.range-30.range-md-center
+					.cell-sm-6
+						.job-offer.bg-white
+							a(href="#").job-offer-title Studio Coordinator
+							ul.list-inline
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-map-marker
+									span.text-middle London
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-clock
+									span.text-middle Full-Time
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-calendar
+									span.text-middle 6 hours ago
+
+					.cell-sm-6
+						.job-offer.bg-white
+							a(href="#").job-offer-title Creative Assistant
+							ul.list-inline
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-map-marker
+									span.text-middle Atlanta
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-clock
+									span.text-middle Full-Time
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-calendar
+									span.text-middle 3 days ago
+
+					.cell-sm-6
+						.job-offer.bg-white
+							a(href="#").job-offer-title Character Artist
+							ul.list-inline
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-map-marker
+									span.text-middle Oakland
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-clock
+									span.text-middle Full-Time
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-calendar
+									span.text-middle 4 days ago
+
+					.cell-sm-6
+						.job-offer.bg-white
+							a(href="#").job-offer-title Concept Artist
+							ul.list-inline
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-map-marker
+									span.text-middle New York
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-clock
+									span.text-middle Full-Time
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-calendar
+									span.text-middle 2 weeks ago
+
+					.cell-sm-6
+						.job-offer.bg-white
+							a(href="#").job-offer-title Visual Arts Instructor
+							ul.list-inline
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-map-marker
+									span.text-middle New York
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-clock
+									span.text-middle Full-Time
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-calendar
+									span.text-middle 1 month ago
+
+					.cell-sm-6
+						.job-offer.bg-white
+							a(href="#").job-offer-title Office Administrator
+							ul.list-inline
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-map-marker
+									span.text-middle Boston
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-clock
+									span.text-middle Full-Time
+								li
+									span.text-middle.icon.icon-sm.icon-primary.mdi.mdi-calendar
+									span.text-middle 5 days ago
+				a(href='about-me.html').button.button-primary.button-square: span view more vacancies
+		// Page Footer
+		include ../sections/_footer-default

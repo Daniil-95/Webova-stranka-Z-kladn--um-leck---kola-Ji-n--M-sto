@@ -1,0 +1,74 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-panel
+
+block variables
+	- var activeIndex = 5
+	- var pageName = "Testimonials"
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	include ../sections/_header-default-with-top-panel-var-2
+	main
+		+breadcrumbs({
+			path: [['Pages', '#'], [pageName]],
+			bgImageClass: 'breadcrumbs-01'
+		})
+
+		section.section.section-md.bg-white.text-center
+			.shell
+				.range.range-xs-center.range-30
+					.cell-sm-6
+						.quote-box
+							.quote-box-header
+								+jpg('testimonials-01-75x75', 'img-circle')
+								h4.quote-box-title: a(href='#').link.link-gray-darker I’m recommending you to all my friends
+							.quote-box-body
+								q My sweetheart loved the portrait! You not only captured her image so well but unveiled and projected my feelings and thoughts through it. The depth of your work is really impressive. You are the best and I will recommend you and your services to all my friends!
+							.quote-box-footer
+								.quote-box-cite
+									cite Jeff williams
+									span Sales Manager
+
+					.cell-sm-6
+						.quote-box
+							.quote-box-header
+								+jpg('testimonials-02-75x75', 'img-circle')
+								h4.quote-box-title: a(href='#').link.link-gray-darker Thank you for your creative paintings!
+							.quote-box-body
+								q You're a gifted and masterful artist who is able to capture the essence of people with such depth and accuracy, and at the same time weave in the intricacies of a beautifully composed grand work of art. Each of your pieces is unique, yet identifiably bears your signature style.
+							.quote-box-footer
+								.quote-box-cite
+									cite samantha clarkson
+									span Journalist
+
+					.cell-sm-6
+						.quote-box
+							.quote-box-header
+								+jpg('testimonials-03-75x75', 'img-circle')
+								h4.quote-box-title: a(href='#').link.link-gray-darker You create amazing and captivating paintings!
+							.quote-box-body
+								q The Blue Sea painting I received from you is so beautiful and perfect in every way. The lusciousness of the colors pops off the surface. I am in love with it. It is even better in person and all my visitors and guests admire your work. I know I will be a returning customer from now on.
+							.quote-box-footer
+								.quote-box-cite
+									cite Jasmine peterson
+									span Stylist
+
+					.cell-sm-6
+						.quote-box
+							.quote-box-header
+								+jpg('testimonials-04-75x75', 'img-circle')
+								h4.quote-box-title: a(href='#').link.link-gray-darker Your painting perfectly fits my home
+							.quote-box-body
+								q I am thrilled with your newest piece. It is perfect for my beach house. The workmanship is exceptional. I've already had many many compliments about it. It was shipped with care and clearly made with passion.  I think I’ll be ordering more very soon.
+							.quote-box-footer
+								.quote-box-cite
+									cite Ann Smith
+									span Designer
+
+		// Page Footer
+		include ../sections/_footer-default

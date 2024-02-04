@@ -1,0 +1,91 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-panel
+
+block variables
+  - var activeIndex = 5
+  - var pageName = "Specials"
+
+block title
+  title=pageName
+
+block page
+  // Page Header
+  include ../sections/_header-default-with-top-panel-var-2
+  main
+    +breadcrumbs({
+      path: [['Pages', '#'],[pageName]],
+      bgImageClass: 'breadcrumbs-01'
+    })
+  
+    section.section.section-md.bg-white.text-center
+      .shell
+        .range.range-xs-center.range-75
+          .cell-sm-6
+            a(href='#').special-box
+              figure
+                +jpg('special-01-561x260')
+              .special-box-header
+                .special-box-header-inner
+                  .special-box-title Pencil Portraits
+                  .special-box-offer Save $20
+                .special-box-header-inner
+                  .special-box-price 
+                    sup $
+                    | 59
+              .special-box-footer
+                p Limited Time Offer
+                .button-link order now
+                
+                  
+          .cell-sm-6
+            a(href='#').special-box
+              figure
+                +jpg('special-01-561x260')
+              .special-box-header
+                .special-box-header-inner
+                  .special-box-title Pop Art
+                  .special-box-offer Save $10
+                .special-box-header-inner
+                  .special-box-price
+                    sup $
+                    | 89
+              .special-box-footer
+                p Limited Time Offer
+                .button-link order now
+                  
+          .cell-sm-6
+            a(href='#').special-box
+              figure
+                +jpg('special-01-561x260')
+              .special-box-header
+                .special-box-header-inner
+                  .special-box-title Abstract Art
+                  .special-box-offer Save $46
+                .special-box-header-inner
+                  .special-box-price
+                    sup $
+                    | 78
+              .special-box-footer
+                p Limited Time Offer
+                .button-link order now
+                  
+          .cell-sm-6
+            a(href='#').special-box
+              figure
+                +jpg('special-01-561x260')
+              .special-box-header
+                .special-box-header-inner
+                  .special-box-title Watercolor Portraits
+                  .special-box-offer Save $10
+                .special-box-header-inner
+                  .special-box-price
+                    sup $
+                    | 24
+              .special-box-footer
+                p Limited Time Offer
+                .button-link order now
+                
+    // Page Footer
+    include ../sections/_footer-default

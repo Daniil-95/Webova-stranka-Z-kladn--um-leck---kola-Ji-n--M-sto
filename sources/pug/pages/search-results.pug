@@ -1,0 +1,38 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Search results'
+
+block title
+  title=pageName
+
+block page
+  // Page Header
+  include ../sections/_header-default-with-top-panel-var-2
+  main
+    +breadcrumbs({
+      path: [['Pages', '#'], [pageName]],
+      bgImageClass: 'breadcrumbs-01'
+    })
+  
+    section.section.section-md.bg-white
+      .shell
+        .range.range-md-center
+          .cell-md-10.cell-lg-8
+            .form-search
+              form.rd-search(action="search-results.html" data-search-live="rd-search-results-live" method="GET")
+                div.form-wrap
+                  label.form-label(for="rd-navbar-search-form-input" class="form-label") Type and hit enter...
+                  input(class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off")
+                  
+                button.form-search-submit
+                  span.mdi.mdi-magnify
+            .rd-search-results
+    ='\n'
+    
+    // Page Footer
+    include ../sections/_footer-default
+    

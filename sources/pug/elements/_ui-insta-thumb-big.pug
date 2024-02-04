@@ -1,0 +1,8 @@
+mixin thumbnail-instafeed-big(obj)
+  - var originalSize = obj.imgOriginal.split('_')[0].split('-').pop();
+  .thumbnail-instafeed(class= obj.className)
+    a.thumbnail-classic( href='images/original/' + obj.imgOriginal + '.jpg', data-photo-swipe-item='', data-size=originalSize )
+      figure
+        +jpg( obj.img )
+      .caption
+        p.caption-title=obj.title

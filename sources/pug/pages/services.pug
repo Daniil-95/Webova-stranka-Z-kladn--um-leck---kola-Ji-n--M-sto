@@ -1,0 +1,58 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-panel
+
+block variables
+  - var activeIndex = 2
+  - var pageName = "Services"
+
+block title
+  title=pageName
+
+block page
+  // Page Header
+  include ../sections/_header-default-with-top-panel-var-2
+  main
+    +breadcrumbs({
+      path: [[pageName]],
+      bgImageClass: 'breadcrumbs-01'
+    })
+  
+    section.section.section-md.bg-white.text-center
+      .shell
+        .range.range-xs-center.range-75
+          .cell-sm-6
+            a(href='portraits.html').services-box
+              figure
+                +jpg('services-01-529x380')
+              .services-box-caption
+                .services-box-title Portraits
+                span.services-box-price From $35
+                  
+          .cell-sm-6
+            a(href='portraits.html').services-box
+              figure
+                +jpg('services-02-529x380') 
+              .services-box-caption
+                .services-box-title Pop Art
+                span.services-box-price From $20
+                  
+          .cell-sm-6
+            a(href='portraits.html').services-box
+              figure 
+                +jpg('services-03-529x380')
+              .services-box-caption
+                .services-box-title Abstract Art
+                span.services-box-price From $75
+                  
+          .cell-sm-6
+            a(href='portraits.html').services-box
+              figure
+                +jpg('services-04-529x380')
+              .services-box-caption
+                .services-box-title Masterclasses
+                span.services-box-price From $50
+                
+    // Page Footer
+    include ../sections/_footer-default

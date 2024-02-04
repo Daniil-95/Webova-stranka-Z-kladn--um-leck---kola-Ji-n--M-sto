@@ -1,0 +1,24 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Icons'
+
+block title
+  title=pageName
+
+block page
+  // Page Header
+  include ../sections/_header-default-with-top-panel-var-2
+  main
+    +breadcrumbs({
+      path: [['Pages', '#'], [pageName]],
+      bgImageClass: 'breadcrumbs-01'
+    })
+  
+    include ../sections/_section-font-awesome 
+    include ../sections/_section-glyphicons
+    include ../sections/_section-material-design-icons
+  
+    // Page Footer
+    include ../sections/_footer-default   

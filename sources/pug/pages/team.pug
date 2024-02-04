@@ -1,0 +1,135 @@
+extends  ../_skeleton
+
+//- Includes
+
+
+block variables
+	- var activeIndex = 5
+	- var pageName = 'Team'
+
+block title
+	title=pageName
+
+block page
+	include ../sections/_header-default-with-top-panel-var-2
+	main
+		+breadcrumbs({
+			path: [['Pages', '#'], [pageName]],
+			bgImageClass: 'breadcrumbs-01'
+		})
+
+		section.section.section-md.bg-white
+			.shell
+				.range.range-xs-center.range-75
+
+					//team member 1
+					.cell-sm-6.cell-md-4
+						.team-box.box-outline
+							.team-image-box
+								+jpg('team-01-295x282')
+								.team-image-caption
+									+list-inline-icon({
+										list_class: 'list-inline',
+										items: [
+											"icon-sm icon-white fa-instagram",
+											"icon-sm icon-white fa-facebook",
+											'icon-sm icon-white fa-twitter']
+									})
+
+							.team-caption
+								a(href='team-mp.html').link.team-title Robert Smith
+								span PR Manager
+
+					//team member 2
+					.cell-sm-6.cell-md-4
+						.team-box.box-outline
+							.team-image-box
+								+jpg('team-02-295x282')
+								.team-image-caption
+									+list-inline-icon({
+										list_class: 'list-inline',
+										items: [
+											"icon-sm icon-white fa-instagram",
+											"icon-sm icon-white fa-facebook",
+											'icon-sm icon-white fa-twitter']
+									})
+
+							.team-caption
+								a(href='team-mp.html').link.team-title Regina Mills
+								span Studio Manager
+
+					//team member 3
+					.cell-sm-6.cell-md-4
+						.team-box.box-outline
+							.team-image-box
+								+jpg('team-03-295x282')
+								.team-image-caption
+									+list-inline-icon({
+										list_class: 'list-inline',
+										items: [
+											"icon-sm icon-white fa-instagram",
+											"icon-sm icon-white fa-facebook",
+											'icon-sm icon-white fa-twitter']
+									})
+
+							.team-caption
+								a(href='team-mp.html').link.team-title Sandra Adams
+								span Gallery Manager
+
+					//team member 4
+					.cell-sm-6.cell-md-4
+						.team-box.box-outline
+							.team-image-box
+								+jpg('team-04-295x282')
+								.team-image-caption
+									+list-inline-icon({
+										list_class: 'list-inline',
+										items: [
+											"icon-sm icon-white fa-instagram",
+											"icon-sm icon-white fa-facebook",
+											'icon-sm icon-white fa-twitter']
+									})
+
+							.team-caption
+								a(href='team-mp.html').link.team-title Janet Wright
+								span Concept Artist
+
+					//team member 5
+					.cell-sm-6.cell-md-4
+						.team-box.box-outline
+							.team-image-box
+								+jpg('team-05-295x282')
+								.team-image-caption
+									+list-inline-icon({
+										list_class: 'list-inline',
+										items: [
+											"icon-sm icon-white fa-instagram",
+											"icon-sm icon-white fa-facebook",
+											'icon-sm icon-white fa-twitter']
+									})
+
+							.team-caption
+								a(href='team-mp.html').link.team-title Adam Harris
+								span Creative Assistant
+
+					//team member 6
+					.cell-sm-6.cell-md-4
+						.team-box.box-outline
+							.team-image-box
+								+jpg('team-06-295x282')
+								.team-image-caption
+									+list-inline-icon({
+										list_class: 'list-inline',
+										items: [
+											"icon-sm icon-white fa-instagram",
+											"icon-sm icon-white fa-facebook",
+											'icon-sm icon-white fa-twitter']
+									})
+
+							.team-caption
+								a(href='team-mp.html').link.team-title Carol Wilson
+								span Studio Assistant
+
+		// Page Footer
+		include ../sections/_footer-default
+

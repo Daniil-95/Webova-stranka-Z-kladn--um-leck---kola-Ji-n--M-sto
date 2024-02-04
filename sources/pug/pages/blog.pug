@@ -1,0 +1,106 @@
+extends  ../_skeleton
+
+//- Includes
+
+
+block variables
+	- var activeIndex = 5
+	- var pageName = 'Blog'
+
+block title
+	title=pageName
+
+block page
+	include ../sections/_header-default-with-top-panel-var-2
+	main
+		+breadcrumbs({
+			path: [['Pages', '#'], [pageName]],
+			bgImageClass: 'breadcrumbs-01'
+		})
+
+		section.section-md.text-left
+			.shell
+				.range.range-md-center.range-90
+					.cell-md-10
+						.post-box
+							.post-box-image
+								figure
+									a(href=postLink)
+										+jpg('blog-post-01-971x509')
+							.post-box-body
+								.post-box-text
+									h4: a(href='blog-post.html').link.link-gray-dark Why Using Instagram is a Must for an Artist
+									p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus!
+
+								figure.author-image
+									+jpg('blog-user-01-113x113', 'img-circle')
+									figcaption
+										span Samantha Black
+
+								ul.list-inline.post-box-tags
+									li
+										time(datetime='2017')
+											span.icon.mdi.mdi-calendar-today
+											span 01/22/2017
+									li
+										a(href='blog-post.html').link-gray
+											span.icon.mdi.mdi-tag
+											| News
+
+					.cell-md-10
+						.post-box
+							.post-box-image
+								figure
+									a(href=postLink)
+										+jpg('blog-post-02-971x509')
+							.post-box-body
+								.post-box-text
+									h4: a(href='blog-post.html').link.link-gray-dark Latest Fine Art Trends
+									p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus!
+
+								figure.author-image
+									+jpg('blog-user-02-113x113', 'img-circle')
+									figcaption
+										span Jane Smith
+
+								ul.list-inline.post-box-tags
+									li
+										time(datetime='2017')
+											span.icon.mdi.mdi-calendar-today
+											span 10/26/2017
+									li
+										a(href='blog-post.html').link-gray
+											span.icon.mdi.mdi-tag
+											| News
+
+					.cell-md-10
+						.post-box
+							.post-box-image
+								figure
+									a(href=postLink)
+										+jpg('blog-post-03-971x509')
+							.post-box-body
+								.post-box-text
+									h4: a(href='blog-post.html').link.link-gray-dark How to Keep Your Studio Organized
+									p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus!
+
+								figure.author-image
+									+jpg('blog-user-03-113x113', 'img-circle')
+									figcaption
+										span Samantha Black
+
+								ul.list-inline.post-box-tags
+									li
+										time(datetime='2017')
+											span.icon.mdi.mdi-calendar-today
+											span 10/12/2017
+									li
+										a(href='blog-post.html').link-gray
+											span.icon.mdi.mdi-tag
+											| News
+					.cell-md-10
+						+pagination
+
+		// Page Footer
+		include ../sections/_footer-default
+

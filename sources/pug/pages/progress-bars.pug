@@ -1,0 +1,114 @@
+extends  ../_skeleton
+
+//- Includes
+
+
+block variables
+	- var activeIndex = 5
+	- var pageName = 'Progress Bars, Skill Bars, Counters'
+
+block title
+	title=pageName
+
+block page
+	// Page header
+	include ../sections/_header-default-with-top-panel-var-2
+	main
+		+breadcrumbs({
+			path: [['Pages', '#'], [pageName]],
+			bgImageClass: 'breadcrumbs-01'
+		})
+
+		// Progress bars
+		section.section-md.bg-white.text-center
+			.shell
+				h3 Progress Bars, Skill Bars, Counters
+				p.big.
+					These elements are vital to every website’s design, and with them you are able to improve #[br]
+					the overall look of your resource and attract more clients.
+
+				.range.range-md-reverse.range-lg-justify.spacing-55.text-left
+					.cell-sm-9.cell-md-6.cell-lg-5
+						h4 Welcome to our website
+						p.
+							Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you lots of interesting things about our company, its products and services, highly professional staff and happy customers.
+					.cell-md-6
+						ul.list-bars
+							li.list-bars-item
+								// Progress Bar
+								.progress-bar-bs.progress-variant-primary
+									p.list-bars-item-header Dedication
+									.progress
+										.progress-bar(role='progressbar', aria-valuenow='75', aria-valuemin='0', aria-valuemax='100', style='width: 75%;')
+									span.caption 75%
+
+							li.list-bars-item
+								// Progress Bar
+								.progress-bar-bs.progress-variant-primary
+									p.list-bars-item-header Knowledge
+									.progress
+										.progress-bar(role='progressbar', aria-valuenow='85', aria-valuemin='0', aria-valuemax='100', style='width: 85%;')
+									span.caption 85%
+
+							li.list-bars-item
+								// Progress Bar
+								.progress-bar-bs.progress-variant-primary
+									p.list-bars-item-header Professionalism
+									.progress
+										.progress-bar(role='progressbar', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100', style='width: 80%;')
+									span.caption 80%
+		='\n'
+
+		// Counters
+		section.bg-image.bg-image-07
+			.shell
+				.range.range-condensed.range-custom-bordered
+					.cell-xs-6.cell-sm-3
+						.counter-box
+							.counter(data-from='0', data-to='12') 12
+							p.counter-box-header YEARS OF EXPERIENCE
+
+					.cell-xs-6.cell-sm-3
+						.counter-box
+							.counter(data-from='0', data-to='7') 07
+							p.counter-box-header partners
+
+					.cell-xs-6.cell-sm-3
+						.counter-box
+							.counter(data-from='0', data-to='26') 26
+							p.counter-box-header QUALIFIED SPECIALISTS
+
+					.cell-xs-6.cell-sm-3
+						.counter-box
+							.counter(data-from='0', data-to='12') 12
+							p.counter-box-header new services
+		='\n'
+
+		// Counters circle
+		section.section-md.bg-white
+			.shell
+				.range.range-50.range-sm-center
+					.cell-xs-6.cell-sm-5.cell-md-3
+						.progress-bar-circle(data-value="0.73", data-gradient="#ff8820, #ff8820", data-empty-fill="rgb(245,245,245)", data-size="180", data-thickness="4")
+							span
+						.progress-bar-circle-title Leadership
+
+					.cell-xs-6.cell-sm-5.cell-md-3
+						.progress-bar-circle(data-value="0.11", data-gradient="#ff8820, #ff8820", data-empty-fill="rgb(245,245,245)", data-size="180", data-thickness="4")
+							span
+						.progress-bar-circle-title Management
+
+					.cell-xs-6.cell-sm-5.cell-md-3
+						.progress-bar-circle(data-value="0.13", data-gradient="#ff8820, #ff8820", data-empty-fill="rgb(245,245,245)", data-size="180", data-thickness="4")
+							span
+						.progress-bar-circle-title Innovation and creativity
+
+
+					.cell-xs-6.cell-sm-5.cell-md-3
+						.progress-bar-circle(data-value="0.59", data-gradient="#ff8820, #ff8820", data-empty-fill="rgb(245,245,245)", data-size="180", data-thickness="4")
+							span
+						.progress-bar-circle-title Resilience
+		='\n'
+
+		// Page Footer
+		include ../sections/_footer-default

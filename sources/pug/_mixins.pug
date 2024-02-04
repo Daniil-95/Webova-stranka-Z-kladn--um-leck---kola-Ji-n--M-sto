@@ -1,0 +1,88 @@
+- function getImageSize(name) { return name.match('[0-9]+(x)[0-9]+')[0].split('x'); }
+
+
+//- Img image
+mixin img(name, className)
+	- var size = getImageSize(name);
+
+	img(src='images/' + name, alt='', width=size[0], height=size[1], class=className)
+
+
+//- Jpg image
+mixin jpg(name, className)
+	- var size = getImageSize(name);
+	img(src='images/' + name + '.jpg', alt='', width=size[0], height=size[1], class=className)
+
+
+//- Png image
+mixin png(name, className)
+	- var size = getImageSize(name);
+	img(src='images/' + name + '.png', alt='', width=size[0], height=size[1], class=className)
+
+mixin thumbnail-small(obj)
+	a.thumbnail-small(href=obj.link)
+		.thumbnail-small-image
+			img(src='images/layout-panel/' + obj.filename + '.jpg', alt='', width='380', height='280')
+		.thumbnail-small-hover-image
+			img(src='images/layout-panel/' + obj.filename + '.jpg', alt='', width='380', height='280')
+
+		.thumbnail-small-caption
+			p.thumbnail-small-header=obj.title
+			
+//- Pagination
+mixin pagination
+	ul.pagination-custom 
+		li.disabled: a(href='#', aria-label="Previous") Prev
+		li.active: a(href='#') 1
+		li: a(href='#') 2
+		li: a(href='#') 3
+		li: a(href='#') 4
+		li: a(href='#', aria-label="Next") Next
+		
+//- Breadcrumbs
+mixin breadcrumbs(obj)
+	- var activeMenuItem = obj.path.pop()[0];
+
+	// Breadcrumbs & Page title
+	section.section-md.text-center.bg-image(class=obj.bgImageClass)
+		.shell.shell-fluid
+			.range.range-xs-center
+				.cell-xs-12.cell-xl-11
+					h1.text-white=activeMenuItem
+					ul.breadcrumbs-custom(class = obj.breadcrumbs_class)
+						li: a(href='index.html')=menu[0].title
+
+						- for (var i = 0; i < obj.path.length; i++)
+							li: a(href=obj.path[i][1])=obj.path[i][0]
+
+						li.active=activeMenuItem
+	='\n'
+	
+// icon list
+mixin list-inline-icon(obj)
+	ul(class=obj.list_class)
+		each item in obj.items
+			li: a(href='#' class=item).icon
+			
+//- Original image naming format: pagename-{X}-1200x600_original.jpg
+mixin thumbnail-classic(obj)
+	- var originalSize = obj.original.split('_')[0].split('-').pop();
+	a.thumbnail-classic(href='images/' + obj.original + '.jpg', data-photo-swipe-item='', data-size=originalSize class=obj.classMod)
+		figure
+			+jpg(obj.img)
+		.caption
+			p.caption-title=obj.title
+			if (obj.text)
+				p.caption-text=obj.text
+				
+//- Portfolio
+//- Original image naming format: pagename-{X}-1200x600_original.jpg
+mixin portfolio(obj)
+	- var originalSize = obj.original.split('_')[0].split('-').pop();
+	a.portfolio-item.thumbnail-classic(href='images/' + obj.original + '.jpg', data-photo-swipe-item='', data-size=originalSize class=obj.classMod)
+		figure
+			+jpg(obj.img)
+		.caption
+			span.icon.mdi-thumb-up-outline=obj.likes
+			span.icon.mdi-eye=obj.views
+				

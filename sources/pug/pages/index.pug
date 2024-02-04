@@ -1,0 +1,224 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-panel
+include ../elements/_ui-insta-thumb-big
+
+block variables
+	- var activeIndex = 0
+	- var pageName = "Home"
+
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	include ../sections/_header-default-with-top-panel-var-2
+	main
+		// services
+		section.section
+			// Owl Carousel
+			.owl-carousel.owl-carousel-condensed(data-items='1', data-xs-items='2', data-lg-items='4', data-dots='false' data-nav='true' data-stage-padding='30',data-sm-stage-padding='100', data-lg-stage-padding='0', data-loop='true', data-margin='0', data-mouse-drag="false" )
+				a(href='portraits.html').services-box-modern
+					figure
+						+jpg('services-01-480x659')
+					.services-box-modern-overlay
+					.services-box-modern-caption
+						.services-box-modern-title Dark Romantic
+						span.services-box-modern-price From $50
+						hr.divider.divider-xs-2
+
+				a(href='portraits.html').services-box-modern
+					figure
+						+jpg('services-02-480x659')
+					.services-box-modern-overlay
+					.services-box-modern-caption
+						.services-box-modern-title Soul Notes
+						span.services-box-modern-price From $45
+						hr.divider.divider-xs-2
+
+				a(href='portraits.html').services-box-modern
+					figure
+						+jpg('services-03-480x659')
+					.services-box-modern-overlay
+					.services-box-modern-caption
+						.services-box-modern-title Orange Mood
+						span.services-box-modern-price From $35
+						hr.divider.divider-xs-2
+
+				a(href='portraits.html').services-box-modern
+					figure
+						+jpg('services-04-480x659')
+					.services-box-modern-overlay
+					.services-box-modern-caption
+						.services-box-modern-title In The Spotlight
+						span.services-box-modern-price From $40
+						hr.divider.divider-xs-2
+
+		// About Me
+		section.section.section-md.bg-white.text-center.text-sm-left
+			.shell
+				.range.range-50.range-md-justify.range-sm-middle
+					.cell-md-6.cell-lg-5.wow.blurIn(data-wow-duration='1.5s', data-wow-offset='100', data-wow-delay='0')
+						h1.heading-2 About Me
+						h6.about-subtitle My name is Brittany Pierce and I’m a professional fine artist based in Los Angeles, CA.
+						p I take inspiration from the innovative styles of contemporary and urban art, such as graphic and graffiti illustrations. I am always open to new artistic challenges and collaborations. Feel free to contact me if you need a unique, one-of-a-kind artwork.
+						.group
+							dl.list-desc
+								dt Weekdays:
+								dd: span.text-gray-darker 8:00–20:00
+
+							dl.list-desc
+								dt Weekends:
+								dd: span.text-gray-darker 9:00–18:00
+
+						a(href='about-me.html').button.button-lg.button-primary-outline.button-square: span book now
+
+					.cell-md-6.cell-lg-6.wow.blurIn(data-wow-duration='1.5s', data-wow-offset='100', data-wow-delay='0')
+						.bg-smear
+							figure
+								+jpg('01-482x564')
+
+		section.section.jp-video-wrap.text-center.context-dark
+			.jp-video-init
+				.jp-video.jp-video-single
+					include ../elements/_ui-video-inline
+			.jp-video-wrap-inner
+				h2 How I Create
+				h4 Outstanding Paintings
+
+		// Prices
+		section.section.section-md.bg-white.text-center
+			.shell
+				h2 Prices
+				.range.range-50
+					.cell-sm-6.cell-md-4
+						.pricing-box.wow.blurIn(data-wow-delay='.35s')
+							.pricing-box-title
+								| Portraits
+							hr
+							table.pricing-table
+								tr
+									td Pencil Portraits
+									td $65
+								tr
+									td Oil Portraits
+									td $85
+								tr
+									td Watercolor Portraits
+									td $75
+
+					.cell-sm-6.cell-md-4
+						.pricing-box.wow.blurIn(data-wow-delay='.1s')
+							.pricing-box-title
+								| Pop art
+							hr
+							table.pricing-table
+								tr
+									td Portraits
+									td $85
+								tr
+									td Posters
+									td $28
+								tr
+									td Murals
+									td $90
+
+					.cell-sm-6.cell-md-4
+						.pricing-box.wow.blurIn(data-wow-delay='.4s')
+							.pricing-box-title
+								| abstract art
+							hr
+							table.pricing-table
+								tr
+									td Paintings
+									td $48
+								tr
+									td Walls
+									td $26
+								tr
+									td Posters
+									td $42
+
+
+		// Portfolio
+		section.section.section-xxs.text-center.bg-gray-light
+			.instafeed( data-photo-swipe-gallery='gallery')
+				.range.range-condensed
+					.cell-xs-6.cell-sm-6.cell-md-3
+						+thumbnail-instafeed-big({
+							img: 'home-01-480x436',
+							imgOriginal: 'home-01-1200x800_original',
+							title: 'Image #1'
+						})
+					.cell-xs-6.cell-sm-6.cell-md-3
+						+thumbnail-instafeed-big({
+							img: 'home-02-480x436',
+							imgOriginal: 'home-02-1200x800_original',
+							title: 'Image #2'
+						})
+					.cell-xs-6.cell-sm-6.cell-md-3
+						+thumbnail-instafeed-big({
+							img: 'home-03-480x436',
+							imgOriginal: 'home-03-1200x800_original',
+							title: 'Image #3'
+						})
+					.cell-xs-6.cell-sm-6.cell-md-3
+						+thumbnail-instafeed-big({
+							img: 'home-04-480x436',
+							imgOriginal: 'home-04-1200x800_original',
+							title: 'Image #4'
+						})
+
+		section.section.section-md.bg-white.text-center.wow.blurIn.bg-image.bg-image-06(data-wow-duration='1.5s', data-wow-offset='100', data-wow-delay='0')
+			.shell
+				h2 Testimonials
+				// Owl Carousel
+				.owl-carousel.owl-testimonials(data-items='1', data-sm-items='2', data-dots='true' data-nav='false' data-stage-padding='15', data-loop='false', data-margin='30', data-mouse-drag="false")
+					.quote-box
+						.quote-box-header
+							+jpg('testimonials-01-75x75', 'img-circle')
+							h4.quote-box-title: a(href='#').link.link-gray-darker I’m recommending you to all my friends
+						.quote-box-body
+							q My sweetheart loved the portrait! You not only captured her image so well but unveiled and projected my feelings and thoughts through it. The depth of your work is really impressive. You are the best and I will recommend you and your services to all my friends!
+						.quote-box-footer
+							.quote-box-cite
+								cite Jeff williams
+								span Sales Manager
+
+					.quote-box
+						.quote-box-header
+							+jpg('testimonials-02-75x75', 'img-circle')
+							h4.quote-box-title: a(href='#').link.link-gray-darker Thank you for your creative paintings!
+						.quote-box-body
+							q You're a gifted and masterful artist who is able to capture the essence of people with such depth and accuracy, and at the same time weave in the intricacies of a beautifully composed grand work of art. Each of your pieces is unique, yet identifiably bears your signature style.
+						.quote-box-footer
+							.quote-box-cite
+								cite samantha clarkson
+								span Journalist
+
+					.quote-box
+						.quote-box-header
+							+jpg('testimonials-03-75x75', 'img-circle')
+							h4.quote-box-title: a(href='#').link.link-gray-darker You create amazing and captivating paintings!
+						.quote-box-body
+							q The Blue Sea painting I received from you is so beautiful and perfect in every way. The lusciousness of the colors pops off the surface. I am in love with it. It is even better in person and all my visitors and guests admire your work. I know I will be a returning customer from now on.
+						.quote-box-footer
+							.quote-box-cite
+								cite Jasmine peterson
+								span Stylist
+
+					.quote-box
+						.quote-box-header
+							+jpg('testimonials-04-75x75', 'img-circle')
+							h4.quote-box-title: a(href='#').link.link-gray-darker Your painting perfectly fits my home
+						.quote-box-body
+							q I am thrilled with your newest piece. It is perfect for my beach house. The workmanship is exceptional. I've already had many many compliments about it. It was shipped with care and clearly made with passion.  I think I’ll be ordering more very soon.
+						.quote-box-footer
+							.quote-box-cite
+								cite Ann Smith
+								span Designer
+
+		// Page Footer
+		include ../sections/_footer-default

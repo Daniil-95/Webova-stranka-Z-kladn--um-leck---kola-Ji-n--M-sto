@@ -1,0 +1,90 @@
+//- Includes
+  
+include ../elements/_widget-tags
+include ../elements/_widget-twitter
+
+// Section Blog Modern
+aside.text-left
+  // Search Form
+  .form-search
+    form.rd-search(action="search-results.html" data-search-live="rd-search-results-live" method="GET")
+      div.form-wrap
+        label.form-label(for="rd-navbar-search-form-input" class="form-label") Search...
+        input(class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off")
+        
+      button.form-search-submit
+        span.mdi.mdi-magnify
+
+  .range.range-50
+    .cell-xs-6.cell-md-12
+      // Category
+      p.aside-title Categories
+
+      ul.marked-list.marked-list__mod-1
+        li
+          a(href="#").link-gray-darker Tips         #[span.text-gray (4)]
+        li
+          a(href="#").link-gray-darker Pop Art      #[span.text-gray (4)]
+        li
+          a(href="#").link-gray-darker Abstract Art #[span.text-gray (4)]
+
+    .cell-xs-6.cell-md-12
+      // Archive
+      p.aside-title Popular posts
+      
+      .post-minimal.unit.unit-horizontal.unit-spacing-sm
+        .unit__left
+          a(href='blog-post.html')
+            +jpg('aside-blog-01-70x70','img-rounded')
+        .unit__body
+          a.link-gray-darker(href='blog-post.html') What Painting Techniques You Must Definitely Learn
+          div
+            time(datetime='2016') Feb 4, 2016
+            =' '
+            span /
+            =' '
+            span 3 Comments
+
+      .post-minimal.unit.unit-horizontal.unit-spacing-sm
+        .unit__left
+          a(href='blog-post.html')
+            +jpg('aside-blog-02-70x70','img-rounded')
+        .unit__body
+          a.link-gray-darker(href='blog-post.html') Best Places for Creating Fine Art Masterpieces
+          div
+            time(datetime='2016') Feb 4, 2016
+            =' '
+            span /
+            =' '
+            span 3 Comments
+
+      .post-minimal.unit.unit-horizontal.unit-spacing-sm
+        .unit__left
+          a(href='blog-post.html')
+            +jpg('aside-blog-03-70x70','img-rounded')
+        .unit__body
+          a.link-gray-darker(href='blog-post.html') What Modern Artist Needs: My Personal Top 10
+          div
+            time(datetime='2016') Feb 4, 2016
+            =' '
+            span /
+            =' '
+            span 3 Comments
+    .cell-xs-6.cell-md-12
+      // Twitter Feed
+      p.aside-title Twitter Feed
+      
+      +widget-twitter({
+        "dataTwitterUsername": "templatemonster"
+      })
+    .cell-xs-6.cell-md-12
+      // Tags
+      p.aside-title Tags
+    
+      
+      +widget-tags("button button-xs button-tags button-default-outline", [
+        {"title": "fine art", "href": "#"},
+        {"title": "tips", "href": "#"},
+        {"title": "trends", "href": "#"},
+        {"title": "news", "href": "#"}
+      ])

@@ -1,0 +1,71 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-panel
+
+block variables
+	- var activeIndex = 2
+	- var pageName = "Portraits"
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	include ../sections/_header-default-with-top-panel-var-2
+	main
+		+breadcrumbs({
+			path: [['Services', 'services.html'], [pageName]],
+			bgImageClass: 'breadcrumbs-02'
+		})
+
+
+		section.section.section-md.bg-white.text-center
+			.shell
+				.range.range-xs-center.range-50
+					.cell-sm-7
+						.services-single-box
+							.services-single-header
+								.services-single-title Pencil Portraits
+								.services-single-price $95
+							p.services-single-body Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam!
+						.services-single-box
+							.services-single-header
+								.services-single-title Oil Portraits
+								.services-single-price $55
+							p.services-single-body Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam!
+						.services-single-box
+							.services-single-header
+								.services-single-title Watercolor Portraits
+								.services-single-price $15
+							p.services-single-body Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam!
+
+
+					.cell-sm-5
+						// RD Mailform
+						form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='forms', method='post', action='bat/rd-mailform.php')
+							.form-wrap.form-wrap-validation.form-wrap_icon.mdi.mdi-account
+								label.form-label(for="forms-name") Your Name
+								input#forms-name.form-input(type="text" name="name" data-constraints='@Required')
+
+							.form-wrap.form-wrap-validation.form-wrap_icon.mdi.mdi-phone
+								label.form-label(for="forms-phone") Phone
+								input#forms-phone.form-input(type="text" name="phone" data-constraints="@Numeric @Required")
+
+							.form-wrap.form-wrap-validation.form-wrap_icon.mdi.mdi-format-list-bulleted
+								//Select 2
+								select.form-input.select-filter(data-placeholder='Portraits' data-constraints="@Required", data-minimum-results-search='-1')
+									option &nbsp;
+									option(value="1") Portraits
+									option(value="2") Abstract Art
+									option(value="3") Pop Art
+
+							.form-wrap.form-wrap-validation.form-wrap_icon.mdi.mdi-calendar-text
+								label.form-label(for="event-date") Select a Day
+								input#event-date.form-input(type="text" name="calendar" data-time-picker='date')
+
+							.form-button
+								button(type="submit").button.button-primary.button-square: span book appointment
+
+		// Page Footer
+		include ../sections/_footer-default

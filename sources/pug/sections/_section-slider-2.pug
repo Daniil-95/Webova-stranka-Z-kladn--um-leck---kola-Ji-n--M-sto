@@ -1,0 +1,39 @@
+// Classic slider
+  
+section.section
+  // Swiper 
+  .swiper-container.swiper-slider.swiper-style-2(data-loop='false' data-autoplay='5500' data-simulate-touch="false" data-slide-effect='slide' data-direction='vertical')
+    .swiper-wrapper
+
+      .swiper-slide(data-slide-bg='images/slide-01.jpg')
+        .swiper-slide-caption
+          .shell.text-sm-left
+            h1(data-caption-animate='slideInDown' data-caption-delay='100') Your Look
+            .slider-subtitle-group
+              .decoration-line(data-caption-animate='slideInDown' data-caption-delay='400')
+              h4(data-caption-animate='slideInLeft' data-caption-delay='700') is what we specialize in
+              h3(data-caption-animate='slideInLeft' data-caption-delay='800') at our hair salon
+            a(href='about-me.html' data-caption-animate='slideInLeft' data-caption-delay='1150').button.button-lg.button-secondary-outline.button-square: span learn more
+
+      .swiper-slide(data-slide-bg='images/slide-02.jpg')
+        .swiper-slide-caption
+          .shell.text-sm-left
+            h1(data-caption-animate='slideInDown' data-caption-delay='100') Your Hair
+            .slider-subtitle-group
+              .decoration-line(data-caption-animate='slideInDown' data-caption-delay='400')
+              h4(data-caption-animate='slideInLeft' data-caption-delay='700') can look fabulous and shiny
+              h3(data-caption-animate='slideInLeft' data-caption-delay='800') without extra efforts
+            a(href='about-me.html' data-caption-animate='slideInLeft' data-caption-delay='1150').button.button-lg.button-secondary-outline.button-square: span learn more
+
+      .swiper-slide(data-slide-bg='images/slide-03.jpg')
+        .swiper-slide-caption
+          .shell.text-sm-left
+            h1(data-caption-animate='slideInDown' data-caption-delay='100') Haircuts
+            .slider-subtitle-group 
+              .decoration-line(data-caption-animate='slideInDown' data-caption-delay='400')
+              h4(data-caption-animate='slideInLeft' data-caption-delay='700') at affordable prices
+              h3(data-caption-animate='slideInLeft' data-caption-delay='800') by real pros
+            a(href='about-me.html' data-caption-animate='slideInLeft' data-caption-delay='1150').button.button-lg.button-secondary-outline.button-square: span learn more
+
+    .swiper-pagination
+      

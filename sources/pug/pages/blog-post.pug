@@ -1,0 +1,30 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 5
+  - var pageName = "Blog Post"
+
+block title
+  title= pageName
+
+block page
+  include ../sections/_header-default-with-top-panel-var-2
+  main
+    +breadcrumbs({
+      path: [['Pages', '#'], [pageName]],
+      bgImageClass: 'breadcrumbs-01'
+    })
+    
+    section.section.section-md.bg-white
+      .shell
+        .range.range-xs-center.range-60
+          .cell-md-9
+              include ../sections/_section-blog-default-single
+          .cell-md-3
+              include ../sections/_section-blog-sidebar-variant-2
+  
+    // Page Footer
+    include ../sections/_footer-default
+
+
+

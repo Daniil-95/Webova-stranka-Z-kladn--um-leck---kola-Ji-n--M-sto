@@ -1,0 +1,13 @@
+//- Quote default
+mixin quote-default(obj)
+  // Blockquote default
+  .quote-default.quote-default-left
+    .quote-body
+      .unit.unit-xs-horizontal.unit-xs-top.unit-spacing-sm
+        .unit__left
+          include icons/_icon-quote
+        .unit__body
+          p(class=obj.class_adj): q=obj.text
+    .quote-footer
+      cite=obj.cite
+

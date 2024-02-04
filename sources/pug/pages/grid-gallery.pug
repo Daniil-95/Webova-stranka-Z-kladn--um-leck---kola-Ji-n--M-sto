@@ -1,0 +1,118 @@
+extends  ../_skeleton
+
+//- Includes
+
+
+block variables
+	- var activeIndex = 3
+	- var pageName = 'Grid Gallery'
+
+block title
+	title=pageName
+
+block page
+	include ../sections/_header-default-with-top-panel-var-2
+	main
+		+breadcrumbs({
+			path: [['Gallery', '#'], [pageName]],
+			bgImageClass: 'breadcrumbs-01'
+		})
+
+		section.section-md.bg-gray-light.text-center
+			.shell.isotope-wrap
+				ul.isotope-filters-responsive
+					li: p Choose your category:
+					li.block-top-level
+						// Isotope Filters
+						button.isotope-filters-toggle.button.button-sm.button-primary(data-custom-toggle='#isotope-1', data-custom-toggle-hide-on-blur='true')
+							| Filter
+							span.caret
+						#isotope-1.isotope-filters
+							ul.inline-list
+								li
+									a.active(data-isotope-filter='*', data-isotope-group='gallery', href='#') All
+								li
+									a(data-isotope-filter='Category 1', data-isotope-group='gallery', href='#') Abstract Art
+								li
+									a(data-isotope-filter='Category 2', data-isotope-group='gallery', href='#') Portraits
+								li
+									a(data-isotope-filter='Category 3', data-isotope-group='gallery', href='#') Pop Art
+
+
+				// Isotope Content
+				.row.isotope(data-isotope-layout='fitRows', data-isotope-group='gallery', data-photo-swipe-gallery='gallery')
+					.col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='Category 1')
+						+thumbnail-classic({
+							img: 'grid-gallery-1-370x278',
+							original: 'original/grid-gallery-7-1200x1200_original',
+							title: 'Image #1',
+							delay: '.1'
+						})
+
+					.col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='Category 2')
+						+thumbnail-classic({
+							img: 'grid-gallery-2-370x278',
+							original: 'original/grid-gallery-6-800x1200_original',
+							title: 'Image #2',
+							delay: '.2'
+						})
+
+					.col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='Category 1')
+						+thumbnail-classic({
+							img: 'grid-gallery-3-370x278',
+							original: 'original/grid-gallery-2-1200x1200_original',
+							title: 'Image #3',
+							delay: '.3'
+						})
+
+					.col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='Category 3')
+						+thumbnail-classic({
+							img: 'grid-gallery-4-370x278',
+							original: 'original/grid-gallery-8-1200x800_original',
+							title: 'Image #4',
+							delay: '.3'
+						})
+
+					.col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='Category 1')
+						+thumbnail-classic({
+							img: 'grid-gallery-5-370x278',
+							original: 'original/grid-gallery-3-1200x800_original',
+							title: 'Image #5',
+							delay: '.2'
+						})
+
+					.col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='Category 3')
+						+thumbnail-classic({
+							img: 'grid-gallery-6-370x278',
+							original: 'original/grid-gallery-9-1200x800_original',
+							title: 'Image #6',
+							delay: '.1'
+						})
+
+					.col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='Category 1')
+						+thumbnail-classic({
+							img: 'grid-gallery-7-370x278',
+							original: 'original/grid-gallery-5-1200x800_original',
+							title: 'Image #7',
+							delay: '.3'
+						})
+
+					.col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='Category 3')
+						+thumbnail-classic({
+							img: 'grid-gallery-8-370x278',
+							original: 'original/grid-gallery-10-1200x800_original',
+							title: 'Image #8',
+							delay: '.2'
+						})
+
+					.col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='Category 2')
+						+thumbnail-classic({
+							img: 'grid-gallery-9-370x278',
+							original: 'original/grid-gallery-11-1200x800_original',
+							title: 'Image #9',
+							delay: '.1'
+						})
+
+		// Page Footer
+		include ../sections/_footer-default
+

@@ -1,0 +1,31 @@
+//- Comment Box
+//- type - comment box type
+//- image - {image} object
+//- date - comment date
+//- title - comment author
+//- body - comment body
+mixin box-comment(obj, type)
+  // Box Comment
+  .box-comment.text-left(class=type)
+    .unit.unit-xs-horizontal.unit-spacing-md
+      .unit__left
+        +jpg(obj.image, 'img-circle')
+      .unit__body
+        .box-comment-body
+          .box-comment-header
+            .box-comment-header-inner
+              p.box-comment-title= obj.title
+              ul.box-comment-meta.list-inline.list-inline-xs
+                li
+                  a(href="#like").link-gray #[span.box-comment-icon.mdi.mdi-thumb-up-outline] Like
+                li
+                  a(href="#reply").link-gray #[span.box-comment-icon.mdi.mdi-message-outline] Reply
+            .box-comment-header-inner.box-comment-meta
+              time(datetime="2016-01-01")
+                span=obj.date
+                span.box-comment-icon.mdi.mdi-clock
+          .box-comment-text
+            p=obj.text
+            
+    block
+

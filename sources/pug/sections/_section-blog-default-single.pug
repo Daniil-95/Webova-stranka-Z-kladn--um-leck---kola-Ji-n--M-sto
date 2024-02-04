@@ -1,0 +1,103 @@
+//- Includes
+
+include ../elements/_widget-post
+include ../elements/_ui-box-comment
+include ../elements/_ui-quote-default
+
+// Blog Default Single
+article.post.post-classic.element-mod.text-left
+	// Post media
+	+jpg('post-01-870x412')
+	// Post content
+	.post-content
+		h4 How to Keep Your Studio Organized
+		ul.list-inline.post-meta
+			li
+				.unit.unit-horizontal.unit-spacing-xxs
+					.unit__left
+						span Date:
+					.unit__body
+						time(datetime="2016-01-01") January 22, 2017
+			li
+				.unit.unit-horizontal.unit-spacing-xxs
+					.unit__left
+						span Posted by:
+					.unit__body
+						a(href="blog-post.html").link.link-gray Samantha Black
+			li
+				.unit.unit-horizontal.unit-spacing-xxs
+					.unit__left
+						span Comments:
+					.unit__body
+						a(href="blog-post.html").link.link-gray 3
+			li
+				.unit.unit-horizontal.unit-spacing-xxs
+					.unit__left
+						span Category:
+					.unit__body
+						a(href='blog-post.html').link.link-gray Tips
+
+		hr
+
+		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at!
+
+		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit!
+
+		.quote-secondary
+			q “Organizing your studio is vital for any artist as it helps you create better paintings faster.“
+
+		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus!
+
+
+	footer.range.range-sm-justify.range-15
+		.cell-sm-6
+			.heading-5 Share this post:
+		.cell-sm-6
+			ul.list-inline.text-sm-right
+				li
+					a.icon-gray-8.icon.icon-xs.fa.fa-facebook(href="#")
+				li
+					a.icon-gray-8.icon.icon-xs.fa.fa-twitter(href="#")
+				li
+					a.icon-gray-8.icon.icon-xs.fa.fa-google-plus(href="#")
+				li
+					a.icon-gray-8.icon.icon-xs.fa.fa-pinterest(href="#")
+
+hr
+
+.range.range-50.text-left
+	.cell-xs-12.cell-lg-11
+		h4.text-medium 3 Comments
+
+		//- Comment 1
+		+box-comment({
+			image: 'comment-01-70x70',
+			title: 'Jane Williams',
+			date: 'Feb  16, 7:42 PM',
+			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet!'
+		})
+			//- Reply 1
+			+box-comment({
+				image: 'comment-02-70x70',
+				title: 'JOhn doe',
+				date: 'Feb  16, 7:42 PM',
+				text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet!'
+			})
+				//- Comment 2
+		+box-comment({
+			image: 'comment-03-70x70',
+			title: 'Kate Smith',
+			date: 'Feb  16, 7:42 PM',
+			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet!'
+		})
+
+.range.range-sm-justify.range-50.text-left
+	.cell-xs-12.cell-lg-11
+		h4.text-medium Leave a comment
+
+		form.rd-mailform.form-comment(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+			.form-wrap
+				label.form-label-outside(for="message") Message:
+				textarea#message.form-input(placeholder='Enter your comment' name='message' data-constraints="@Required")
+			.form-button
+				button(type="submit").button.button-primary.button-square: span submit

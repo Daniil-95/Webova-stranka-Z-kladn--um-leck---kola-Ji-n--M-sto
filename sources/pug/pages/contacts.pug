@@ -1,0 +1,93 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 4
+  - var pageName = "Contacts" 
+
+block title
+  title=pageName
+
+block page
+  // Page Header
+  include ../sections/_header-default-with-top-panel-var-2
+  main
+    +breadcrumbs({
+      path: [ [pageName]],
+      bgImageClass: 'breadcrumbs-01'
+    })
+  
+    section.section.section-md.bg-white.text-center
+      .shell
+        .range.range-50.range-md-center
+          .cell-sm-8
+            .contact-box
+              h3 Get in Touch
+              p I am available 24/7 by fax, e-mail or by phone. You can also use my quick contact form to ask a question about my services. I would be pleased to answer your questions.
+  
+              form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                .range.range-sm-bottom.spacing-20
+                  .cell-sm-6
+                    .form-wrap
+                      input#contact-first-name.form-input(type="text" name="name" data-constraints='@Required')
+                      label.form-label(for="contact-first-name") Your name
+  
+                  .cell-sm-6
+                    .form-wrap
+                      input#contact-last-name.form-input(type="text" name="phone" data-constraints='@Numeric')
+                      label.form-label(for="contact-last-name") Phone
+  
+                  .cell-xs-12
+                    .form-wrap
+                      textarea#contact-message.form-input(name="message" data-constraints="@Required")
+                      label.form-label(for="contact-message") Your Message
+  
+                  .cell-sm-6
+                    .form-wrap
+                      input#contact-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+                      label.form-label(for="contact-email") E-mail
+  
+                  .cell-sm-6
+                    button(type="submit").button.button-primary.button-square.button-block: span send message
+                    
+          .cell-sm-4
+            aside.contact-box-aside.text-left
+              .range.range-50
+                .cell-xs-6.cell-sm-12
+                  p.aside-title  get Social
+                  hr.divider.divider-left.divider-custom
+                  ul.list-inline
+                    li: a.icon.icon-sm.icon-gray-3.fa.fa-instagram(href='#')
+                    li: a.icon.icon-sm.icon-gray-3.fa.fa-facebook(href='#')
+                    li: a.icon.icon-sm.icon-gray-3.fa.fa-twitter(href='#')
+                    li: a.icon.icon-sm.icon-gray-3.fa.fa-youtube(href='#')
+                    
+                .cell-xs-6.cell-sm-12
+                  p.aside-title  Phone
+                  hr.divider.divider-left.divider-custom
+                  .unit.unit-middle.unit-horizontal.unit-spacing-xs.unit-xs-top
+                    .unit__left
+                      span.text-middle.icon.icon-sm.mdi.mdi-phone.icon-primary
+                    .unit__body
+                      a.text-middle.link.link-gray-dark(href='tel:#') 1-800-1234-567
+                  
+                .cell-xs-6.cell-sm-12
+                  p.aside-title  Address
+                  hr.divider.divider-left.divider-custom
+                  .unit.unit-middle.unit-horizontal.unit-spacing-xs.unit-xs-top
+                    .unit__left
+                      span.text-middle.icon.icon-sm.mdi.mdi-map-marker.icon-primary
+                    .unit__body
+                      a.text-middle.link.link-gray-dark(href='contacts.html') 267 Park Avenue New York, NY 90210
+                      
+                .cell-xs-6.cell-sm-12
+                  p.aside-title  opening hours
+                  hr.divider.divider-left.divider-custom
+                  .unit.unit-middle.unit-horizontal.unit-spacing-xs.unit-xs-top
+                    .unit__left
+                      span.text-middle.icon.icon-sm.mdi.mdi-clock.icon-primary
+                    .unit__body.text-gray-darker
+                      p I work every day 9:00–23:00
+            
+  
+    // Page Footer
+    include ../sections/_footer-default

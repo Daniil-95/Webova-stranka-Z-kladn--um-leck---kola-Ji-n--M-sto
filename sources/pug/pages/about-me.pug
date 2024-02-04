@@ -1,0 +1,183 @@
+extends  ../_skeleton
+
+block variables
+	- var activeIndex = 1
+	- var pageName = "About Me"
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	include ../sections/_header-default-with-top-panel-var-2
+	main
+		+breadcrumbs({
+			path: [[pageName]],
+			bgImageClass: 'breadcrumbs-01'
+		})
+
+		section.section.section-md.bg-white.text-center.text-sm-left
+			.shell
+				.range.range-50.range-md-justify.range-sm-middle
+					.cell-sm-6
+						.bg-smear
+							figure
+								+jpg('about-01-546x516')
+					.cell-sm-6.cell-md-5
+						h3 A Few Words About Me
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus! Lorem ipsum dolor sit amet, consectetur adipisicing!
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam!
+						a(href='#').button.button-primary-outline.button-square.button-lg: span read more
+
+		section.section.section-md.text-center.bg-gray-light-half
+			.shell
+				h2 Press About Me
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse!
+				.range.range-xs-center.range-50
+					.cell-lg-6
+						.box-custom
+							figure.box-custom-img
+								+jpg('press-01-441x441')
+							.box-custom-caption
+								a(href='#').subtitle Details
+								.title Art Magazine, Issue 3
+
+					.cell-lg-6
+						.box-custom
+							figure.box-custom-img
+								+jpg('press-02-441x441')
+							.box-custom-caption
+								a(href='#').subtitle Details
+								.title Art Magazine, Issue 4
+
+		section.section.section-md.bg-gray-light.text-center
+			.shell
+				h2 What People Say
+				.range.range-50
+					.cell-xs-12
+						.box-outline.box-outline-fullwidth.box-outline__mod-1
+							.quote-carousel-wrap
+								// Slick Carousel
+								.slick-slider.carousel-parent(data-arrows="false", data-loop="true", data-dots="false", data-swipe="true", data-items="1" data-child="#child-carousel", data-for="#child-carousel")
+									.item
+										.quote-center
+											.quote-center-title
+												h4 Your paintings are stunning, bright, and filled with colors!
+											p.quote-center-body
+												q Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus!
+
+											.quote-center-cite
+												cite Anna Brown
+												span Writer
+									.item
+										.quote-center
+											.quote-center-title
+												h4 Thank you for your creative paintings!
+											p.quote-center-body
+												q Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus!
+
+											.quote-center-cite
+												cite Samantha Clarkson
+												span Journalist
+
+									.item
+										.quote-center
+											.quote-center-title
+												h4 You create amazing and captivating paintings!
+											p.quote-center-body
+												q Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus!
+											.quote-center-cite
+												cite Anna Brown
+												span Stylist
+
+									.item
+										.quote-center
+											.quote-center-title
+												h4 Your painting perfectly fits my home
+											p.quote-center-body
+												q Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus!
+
+											.quote-center-cite
+												cite Julie Adams
+												span Designer
+
+
+								.slick-slider#child-carousel(data-for=".carousel-parent", data-arrows="false",
+								data-loop="true", data-dots="false", data-swipe="true", data-center-mode='true',
+								data-sm-center-mode='true', data-md-center-mode='true', data-lg-center-mode='true',  data-center-padding='0.50',
+								data-items="1", data-xs-items="1", data-sm-items="3",
+								data-md-items="3", data-lg-items="3", data-slide-to-scroll="1")
+									.item
+										figure
+											+jpg('about-04-111x111', 'img-circle')
+									.item
+										figure
+											+jpg('about-02-111x111', 'img-circle')
+									.item
+										figure
+											+jpg('about-03-111x111', 'img-circle')
+									.item
+										figure
+											+jpg('about-05-111x111', 'img-circle')
+
+		section.section.section-md.bg-white
+			.shell
+				h2 Team
+				.range.range-xs-center.range-75
+
+					//team member 1
+					.cell-sm-6.cell-md-4
+						.team-box.box-outline
+							.team-image-box
+								+jpg('team-01-295x282')
+								.team-image-caption
+									+list-inline-icon({
+										list_class: 'list-inline',
+										items: [
+											"icon-sm icon-white fa-instagram",
+											"icon-sm icon-white fa-facebook",
+											'icon-sm icon-white fa-twitter']
+									})
+
+							.team-caption
+								a(href='team-mp.html').link.team-title Robert Smith
+								span PR Manager
+
+					//team member 2
+					.cell-sm-6.cell-md-4
+						.team-box.box-outline
+							.team-image-box
+								+jpg('team-02-295x282')
+								.team-image-caption
+									+list-inline-icon({
+										list_class: 'list-inline',
+										items: [
+											"icon-sm icon-white fa-instagram",
+											"icon-sm icon-white fa-facebook",
+											'icon-sm icon-white fa-twitter']
+									})
+
+							.team-caption
+								a(href='team-mp.html').link.team-title Regina Mills
+								span Studio Manager
+
+					//team member 3
+					.cell-sm-6.cell-md-4
+						.team-box.box-outline
+							.team-image-box
+								+jpg('team-03-295x282')
+								.team-image-caption
+									+list-inline-icon({
+										list_class: 'list-inline',
+										items: [
+											"icon-sm icon-white fa-instagram",
+											"icon-sm icon-white fa-facebook",
+											'icon-sm icon-white fa-twitter']
+									})
+
+							.team-caption
+								a(href='team-mp.html').link.team-title Sandra Adams
+								span Gallery Manager
+
+		// Page Footer
+		include ../sections/_footer-default

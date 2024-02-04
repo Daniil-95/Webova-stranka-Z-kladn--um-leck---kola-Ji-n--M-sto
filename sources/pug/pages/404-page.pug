@@ -1,0 +1,36 @@
+extends  ../_skeleton
+
+//- Includes
+
+
+block variables
+  - var activeIndex = 5
+  - var pageName = '404 page'
+
+block title
+  title=pageName
+
+block page
+  include ../sections/_header-default-with-top-panel-var-2
+
+  main
+    section.section.section-lg.bg-primary.text-center.bg-image(style='background-image: url(images/bg-image-2.jpg);')
+      .shell
+        .range.range-md-center
+          .cell-md-6
+            h3 Page not found
+            hr.divider.divider-secondary.divider-xs
+            .extra-large
+              | 404
+            p.big You may have mistyped the address or the page may have moved
+            .group-sm.group-middle.group-center
+              a.button.button-square.button-primary.button-icon.button-icon-left(href='index.html')
+                span.icon.mdi.mdi-arrow-left
+                span back to home
+              a.button.button-square.button-icon.button-icon-left.button-gray-dark-outline(href='contacts.html')
+                span.icon.mdi.mdi-email-outline
+                span contact us
+                
+    // Page Footer
+    include ../sections/_footer-default
+    

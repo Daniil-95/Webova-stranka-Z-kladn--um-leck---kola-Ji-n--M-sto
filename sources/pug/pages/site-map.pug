@@ -1,0 +1,95 @@
+extends  ../_skeleton
+
+block variables
+	- var activeIndex = 5
+	- var pageName = "Site Map"
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	include ../sections/_header-default-with-top-panel-var-2
+	main
+		+breadcrumbs({
+			path: [['Pages', '#'], [pageName]],
+			bgImageClass: 'breadcrumbs-01'
+		})
+
+		section.section.section-md.bg-white.text-left
+			.shell
+				.range.range-50.range-sm-center
+					.cell-xs-6.cell-md-4.cell-lg-3
+
+						h4 Home
+						hr
+						ul.list
+							li
+								a(href='./').site-map-link.fa-files-o Home
+
+						h4 Pages
+						hr
+						ul.list
+							li
+								a(href='about-me.html').site-map-link.fa-files-o About Me
+							li
+								a(href='contacts.html').site-map-link.fa-files-o Contacts
+							li
+								a(href='services.html').site-map-link.fa-files-o Services
+							li
+								a(href='portraits.html').site-map-link.fa-files-o Single Service
+							li
+								a(href='grid-gallery.html').site-map-link.fa-files-o Grid Gallery
+							li
+								a(href='masonry-gallery.html').site-map-link.fa-files-o Masonry Gallery
+							li
+								a(href='full-grid-gallery.html').site-map-link.fa-files-o Full-Width Grid Gallery
+							li
+								a(href='blog.html').site-map-link.fa-files-o Blog
+							li
+								a(href='blog-post.html').site-map-link.fa-files-o Blog Post
+							li
+								a(href='careers.html').site-map-link.fa-files-o Careers
+							li
+								a(href='faq.html').site-map-link.fa-files-o FAQ
+							li
+								a(href='specials.html').site-map-link.fa-files-o Specials
+							li
+								a(href='maintenance.html').site-map-link.fa-files-o Maintenance
+							li
+								a(href='site-map.html').site-map-link.fa-files-o Site Map
+							li
+								a(href='404-page.html').site-map-link.fa-files-o 404 Page
+							li
+								a(href='503-page.html').site-map-link.fa-files-o 503 Page
+							li
+								a(href='testimonials.html').site-map-link.fa-files-o Testimonials
+							li
+								a(href='team.html').site-map-link.fa-files-o Team
+							li
+								a(href='team-mp.html').site-map-link.fa-files-o Team MP
+
+					.cell-xs-6.cell-md-4.cell-lg-3
+
+						h4 Elements
+						hr
+						ul.list
+							li
+								a(href='typography.html').site-map-link.fa-files-o Typography
+							li
+								a(href='forms.html').site-map-link.fa-files-o Forms
+							li
+								a(href='buttons.html').site-map-link.fa-files-o Buttons
+							li
+								a(href='grid.html').site-map-link.fa-files-o Grid Systems
+							li
+								a(href='progress-bars.html').site-map-link.fa-files-o Progress Bars
+							li
+								a(href='tabs-and-accordions.html').site-map-link.fa-files-o Tabs & Accordions
+							li
+								a(href='tables.html').site-map-link.fa-files-o Tables
+							li
+								a(href='icons.html').site-map-link.fa-files-o Icons
+
+		// Page Footer
+		include ../sections/_footer-default

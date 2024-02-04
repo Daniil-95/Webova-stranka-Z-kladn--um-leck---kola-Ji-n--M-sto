@@ -1,0 +1,124 @@
+extends  ../_skeleton
+
+include ../elements/_ui-quote-default
+
+block variables
+	- var activeIndex = 5
+	- var pageName = "Team Member Profile"
+
+block title
+	title=pageName
+
+block page
+	// Page Header
+	include ../sections/_header-default-with-top-panel-var-2
+	main
+		+breadcrumbs({
+			path: [['Pages', '#'], [pageName]],
+			bgImageClass: 'breadcrumbs-01'
+		})
+
+		section.section.section-md.bg-white.element-mod
+			.shell
+				.range.range-xs-center.range-md-justify.range-30
+					.cell-sm-7.cell-md-6
+						.img-thumbnail-custom
+							+jpg('team-mp-01-570x569','img-responsive')
+							.caption
+								ul.list-inline.list-inline-sm
+									li
+										.unit.unit-horizontal.unit-middle.unit-spacing-xs
+											.unit__left
+												span.icon.icon-sm.text-gray-darker.mdi.mdi-phone.text-middle
+											.unit__body
+												a(href="tel:#").link-gray + 123 098 890 76 56
+									li
+										.unit.unit-horizontal.unit-middle.unit-spacing-xs
+											.unit__left
+												span.icon.icon-sm.text-gray-darker.mdi.mdi-email-outline.text-middle
+											.unit__body
+												a(href="mailto:#").link-gray jm@demolink.com
+									li
+										a(href='contacts.html').button.button-primary-outline.button-square: span Get in touch
+					.cell-sm-7.cell-md-5.text-sm-left
+						h3 Regina Mills
+						.team-member-position
+							span Gallery Manager
+
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex!
+
+						+quote-default({
+							text: 'I’m glad to be a part of this creative team. It is has a wonderful friendly atmosphere.',
+							class_adj: 'quote-default-title'
+						})
+
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus!
+
+
+						// PhotoSwipe
+						.range.range-xs-center.gallery-wrap.range-30(data-photo-swipe-gallery='gallery')
+							.cell-xs-6.cell-sm-4
+								a(data-photo-swipe-item='', data-size='847x1200', href='images/certifikate-1.jpg', data-author="Michael Hull").img-wrap-mod-2
+									span.icon.icon-xs.fa-search-plus.icon-white
+									img.img-responsive(width='131', height='186', src='images/agent-2.jpg', alt='')
+							.cell-xs-6.cell-sm-4
+								a(data-photo-swipe-item='', data-size='847x1200', href='images/certifikate-1.jpg').img-wrap-mod-2
+									span.icon.icon-xs.fa-search-plus.icon-white
+									img.img-responsive(width='131', height='186', src='images/agent-2.jpg', alt='')
+							.cell-xs-6.cell-sm-4.offset-top-20.offset-sm-top-0
+								a(data-photo-swipe-item='', data-size='847x1200', href='images/certifikate-1.jpg').img-wrap-mod-2
+									span.icon.icon-xs.fa-search-plus.icon-white
+									img.img-responsive(width='131', height='186', src='images/agent-2.jpg', alt='')
+
+		section.section.section-md.bg-gray-light
+			.shell
+				h3 Regina’s Works
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus!
+				.range.range-30(data-photo-swipe-gallery="gallery")
+					.cell-sm-6.cell-md-4
+						+thumbnail-classic({
+							img: 'grid-gallery-1-371x276',
+							original: 'original/grid-gallery-1-1200x800_original',
+							title: 'Image #1',
+							delay: '.1'
+						})
+					.cell-sm-6.cell-md-4
+						+thumbnail-classic({
+							img: 'grid-gallery-2-371x276',
+							original: 'original/grid-gallery-2-1200x1200_original',
+							title: 'Image #2',
+							delay: '.2'
+						})
+					.cell-sm-6.cell-md-4
+						+thumbnail-classic({
+							img: 'grid-gallery-3-371x276',
+							original: 'original/grid-gallery-3-1200x800_original',
+							title: 'Image #3',
+							delay: '.3'
+						})
+					.cell-sm-6.cell-md-4
+						+thumbnail-classic({
+							img: 'grid-gallery-4-371x276',
+							original: 'original/grid-gallery-4-800x1200_original',
+							title: 'Image #4',
+							delay: '.3'
+						})
+					.cell-sm-6.cell-md-4
+						+thumbnail-classic({
+							img: 'grid-gallery-5-371x276',
+							original: 'original/grid-gallery-5-1200x800_original',
+							title: 'Image #5',
+							delay: '.2'
+						})
+					.cell-sm-6.cell-md-4
+						+thumbnail-classic({
+							img: 'grid-gallery-6-371x276',
+							original: 'original/grid-gallery-6-800x1200_original',
+							title: 'Image #6',
+							delay: '.1'
+						})
+
+		='\n'
+
+		// Page Footer
+		include ../sections/_footer-default

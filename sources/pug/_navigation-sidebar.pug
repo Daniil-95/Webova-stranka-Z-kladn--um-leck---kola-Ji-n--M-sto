@@ -1,0 +1,88 @@
+// RD Navbar Nav
+ul.rd-navbar-nav
+	li(class=(activeIndex == 0 ? 'active' : ''))
+		a(href='./') Home
+
+	li(class=(activeIndex == 1 ? 'active' : ''))
+		a(href='about-me.html') About Me
+
+	li(class=(activeIndex == 2 ? 'active' : ''))
+		a(href='#') Services
+		// RD Navbar Dropdown
+		ul.rd-navbar-dropdown
+			li
+				a(href='services.html') Services
+			li
+				a(href='portraits.html') Single Service
+
+	li(class=(activeIndex == 3 ? 'active' : ''))
+		a(href='#') Gallery
+		// RD Navbar Dropdown
+		ul.rd-navbar-dropdown
+			li
+				a(href='grid-gallery.html') Grid Gallery
+			li
+				a(href='masonry-gallery.html') Masonry Gallery
+			li
+				a(href='full-grid-gallery.html') Full-Width Grid Gallery
+
+	li(class=(activeIndex == 4 ? 'active' : ''))
+		a(href='contacts.html') Contacts
+
+	li(class=(activeIndex == 5 ? 'active' : ''))
+		a(href='#') Pages
+		// RD Navbar Megamenu
+		ul.rd-navbar-megamenu
+			li
+				ul.rd-megamenu-list
+					li
+						a(href='team.html') Team
+					li
+						a(href='team-mp.html') Team MP
+					li
+						a(href='testimonials.html') Testimonials
+					li
+						a(href='404-page.html') 404 Page
+					li
+						a(href='503-page.html') 503 Page
+					li
+						a(href='maintenance.html') Maintenance
+					li
+						a(href='faq.html') FAQ
+			li
+				ul.rd-megamenu-list
+					li
+						a(href='privacy-policy.html') Privacy policy
+					li
+						a(href='site-map.html') Site map
+					li
+						a(href='search-results.html') Search Results
+					li
+						a(href='careers.html') Careers
+					li
+						a(href='specials.html') Specials
+					li
+						a(href='blog.html') Blog
+					li
+						a(href='blog-post.html') Blog Post
+
+	li(class=(activeIndex == 6 ? 'active' : ''))
+		a(href='#') Elements
+		// RD Navbar Dropdown
+		ul.rd-navbar-dropdown
+			li
+				a(href='typography.html') Typography
+			li
+				a(href='tabs-and-accordions.html') Tabs and accordions
+			li
+				a(href='progress-bars.html') Progress Bars
+			li
+				a(href='forms.html') Forms
+			li
+				a(href='tables.html') Tables
+			li
+				a(href='grid.html') Grid
+			li
+				a(href='buttons.html') Buttons
+			li
+				a(href='icons.html') Icons

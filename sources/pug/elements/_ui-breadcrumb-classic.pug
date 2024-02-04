@@ -1,0 +1,21 @@
+//- Breadcrumbs
+
+//- imgPath - path to image
+//- pageTitle - Page title
+//- breadcrumbs - obj of breadcrumbs items
+
+mixin breadcrumb-classic(imgPath, pageTitle, breadcrumbs)
+	// RD Parallax
+	section.rd-parallax
+		.rd-parallax-layer(data-speed='0.35', data-type='media', data-url=imgPath)
+		.rd-parallax-layer(data-speed='0', data-type='html')
+			.shell.context-dark.breadcrumb-wrapper
+				h1=pageTitle
+				ol.breadcrumb-custom
+					each link, index in breadcrumbs
+						if (breadcrumbs[parseInt(index) + 1] )
+							li
+								a(href=link.href)= link.title
+						else
+							li
+								= link.title

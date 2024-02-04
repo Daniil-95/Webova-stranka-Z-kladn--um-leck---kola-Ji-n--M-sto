@@ -1,0 +1,108 @@
+footer.page-footer.footer-default.text-left
+	section.section-md.bg-gray-11
+		.shell
+			.range.range-50
+				.cell-sm-6.cell-md-3
+					h3 Contact Info
+					ul.contact-list
+						li
+							.unit.unit-middle.unit-horizontal.unit-spacing-sm
+								.unit__left
+									span.icon.icon-lg.icon-gray-12.mdi.mdi-map-marker
+								.unit__body
+									a(href='#') 6036 Richmond hwy., #[br] Alexandria, VA, 2230
+
+						li
+							.unit.unit-middle.unit-horizontal.unit-spacing-sm
+								.unit__left
+									span.icon.icon-lg.icon-gray-12.mdi.mdi-clock
+								.unit__body
+									dl.list-desc
+										dt Weekdays:
+										dd: span 8:00–20:00
+
+									dl.list-desc
+										dt Weekends:
+										dd: span 9:00–18:00
+						li
+							.unit.unit-middle.unit-horizontal.unit-spacing-sm
+								.unit__left
+									span.icon.icon-lg.icon-gray-12.mdi.mdi-phone-incoming
+								.unit__body
+									a.big(href='tel:#') +1 (409) 987–5874
+									br
+									a(href='mailto:#') info@demolink.org
+
+				.cell-sm-6.cell-md-4
+					h3 Latest Blog Posts
+					.post-minimal.unit.unit-horizontal.unit-spacing-sm
+						.unit__left
+							a(href='blog-post.html')
+								+jpg('post-minimal-04-81x84','img-rounded')
+						.unit__body
+							a.post-minimal-title.link-gray-darker(href='blog-post.html') The Latest Fine Art Trends: Autumn 2018
+							div
+								time(datetime='2016').post-box-icon.mdi.mdi-clock October 12, 2018
+
+
+					.post-minimal.unit.unit-horizontal.unit-spacing-sm
+						.unit__left
+							a(href='blog-post.html')
+								+jpg('post-minimal-05-81x84','img-rounded')
+						.unit__body
+							a.post-minimal-title.link-gray-darker(href='blog-post.html') Fine Art Basics: Techniques You Need to Master
+							div
+								time(datetime='2016').post-box-icon.mdi.mdi-clock October 26, 2018
+
+
+					.post-minimal.unit.unit-horizontal.unit-spacing-sm
+						.unit__left
+							a(href='blog-post.html')
+								+jpg('post-minimal-06-81x84','img-rounded')
+						.unit__body
+							a.post-minimal-title.link-gray-darker(href='blog-post.html') Why Keeping Your Studio Organized is Important
+							div
+								time(datetime='2016').post-box-icon.mdi.mdi-clock August 23, 2018
+
+
+				.cell-sm-10.cell-md-5
+					h3 Get in Touch
+					// RD Mailform
+					form.rd-mailform.text-left(method='post')
+						.form-wrap.form-wrap-validation.form-wrap_icon.mdi.mdi-format-list-bulleted
+							//Select 2
+							select.form-input.select-filter(data-placeholder="Choose a Preferred Service", data-constraints="@Required", data-minimum-results-search='-1')
+								option(label="placeholder")
+								option(value="1") Portraits
+								option(value="2") Abstract Art
+								option(value="3") Pop Art
+
+						.form-wrap.form-wrap-validation.form-wrap_icon.mdi.mdi-calendar-text
+							label.form-label(for="footer-event-date") Select a Day
+							input#footer-event-date.form-input(type="text" name='date' data-time-picker='date')
+
+						.form-wrap.form-wrap-validation.form-wrap_icon.mdi.mdi-comment-outline
+							label.form-label(for="footer-forms-textarea") Message
+							textarea#footer-forms-textarea.form-input(name="message" data-constraints="@Required")
+
+						.form-button
+							button(type="submit").button.button-primary.button-square.button-lg: span submit
+
+	section.section-xxs.bg-gray-13.text-center
+		.shell
+			.range.range-xs-center.range-sm-justify
+				.cell-xs-8.cell-sm-6.text-sm-left
+					.group
+						span Follow Me:
+						ul.list-inline
+							li: a.icon.icon-sm.icon-gray-12.fa.fa-instagram(href='#')
+							li: a.icon.icon-sm.icon-gray-12.fa.fa-facebook(href='#')
+							li: a.icon.icon-sm.icon-gray-12.fa.fa-twitter(href='#')
+				.cell-xs-8.cell-sm-6.text-sm-right
+					p.rights
+						=brandName
+						| &nbsp;&copy;&nbsp;
+						span(id="copyright-year")
+						| .&nbsp;
+						br.veil-sm
+						a(href="privacy-policy.html") Privacy Policy

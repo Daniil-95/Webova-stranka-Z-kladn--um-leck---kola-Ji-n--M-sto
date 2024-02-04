@@ -1,0 +1,71 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-table-custom
+
+block variables
+  - var activeIndex = 5
+  - var pageName = 'Tables'
+
+block title
+  title=pageName
+
+block page
+  // Page Header
+  include ../sections/_header-default-with-top-panel-var-2
+  main    
+    +breadcrumbs({
+      path: [['Pages', '#'], [pageName]],
+      bgImageClass: 'breadcrumbs-01'
+    })
+  
+    // Hover Row Table
+    section.section-md.bg-white
+      .shell
+        h3 Tables
+        p Tables have always been perfect for displaying facts and numbers. #[br.veil.reveal-sm-inline]Now you can benefit from using them on your website. 
+  
+        .range.range-xs-center
+          .cell-sm-12
+            +table-custom([
+              ['Column 1', 'Column 2', 'Column 3', 'Column 4'],
+              ['Item #1', 'Description', 'Subtotal:', '$1.00'],
+              ['Item #2', 'Description', 'Discount:', '$2.00'],
+              ['Item #3', 'Description', 'Shipping:', '$3.00'],
+              ['Item #4', 'Description', 'Tax:', '$4.00'],
+              ['All Items', 'Description', 'Your Total:', '$5.00']],
+            "table-custom-primary", true)
+            
+    hr
+    // Striped Table
+    section.section-md.bg-white
+      .shell
+        .range.range-xs-center
+          .cell-sm-12
+            +table-custom([
+              ['Column 1', 'Column 2', 'Column 3', 'Column 4'],
+              ['Item #1', 'Description', 'Subtotal:', '$1.00'],
+              ['Item #2', 'Description', 'Discount:', '$2.00'],
+              ['Item #3', 'Description', 'Shipping:', '$3.00'],
+              ['Item #4', 'Description', 'Tax:', '$4.00'],
+              ['All Items', 'Description', 'Your Total:', '$5.00']],
+            "table-fixed table-custom-light", true)
+  
+    hr
+    // Color Header
+    section.section-md.bg-white
+      .shell
+        .range.range-xs-center
+          .cell-sm-12
+            +table-custom([
+              ['Column 1', 'Column 2', 'Column 3', 'Column 4'],
+              ['Item #1', 'Description', 'Subtotal:', '$1.00'],
+              ['Item #2', 'Description', 'Discount:', '$2.00'],
+              ['Item #3', 'Description', 'Shipping:', '$3.00'],
+              ['Item #4', 'Description', 'Tax:', '$4.00'],
+              ['All Items', 'Description', 'Your Total:', '$5.00']],
+            "table-custom-primary table-custom-striped", true)
+            
+  
+    // Page Footer
+    include ../sections/_footer-default
